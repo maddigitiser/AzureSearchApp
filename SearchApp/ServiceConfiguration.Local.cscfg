@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="SearchApp" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2012-05.1.7">
+  <Role name="FrontEndWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="SqlAzureServer" value="Server=tcp:g6uodc887j.database.windows.net,1433;Database=SearchApp;User ID=searchAdmin@g6uodc887j;Password=Pa55w0rd;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://searchapp.servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=s0mg2t7p9Mf3ALxc2/qEyrhZxtJHQ1FEYDmIEFOOT0A=" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="BackEndWorker">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://searchapp.servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=s0mg2t7p9Mf3ALxc2/qEyrhZxtJHQ1FEYDmIEFOOT0A=" />
+      <Setting name="SqlAzureServer" value="Server=tcp:g6uodc887j.database.windows.net,1433;Database=SearchApp;User ID=searchAdmin@g6uodc887j;Password=Pa55w0rd;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

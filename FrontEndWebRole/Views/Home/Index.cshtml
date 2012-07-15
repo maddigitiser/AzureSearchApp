@@ -1,0 +1,14 @@
+﻿@model FrontEndWebRole.Models.SearchQueryViewModel
+@{
+    ViewBag.Title = "Acme Text Search";
+}
+
+<h2>Acme Text Search</h2>
+
+@using (Html.BeginForm("Results", "Home", FormMethod.Get))
+{
+    @Html.EditorFor(model => model.Tokens)
+}
+
+
+@Html.ActionLink("Submit a file to the indexer", "Submit")

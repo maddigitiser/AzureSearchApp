@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+
+@ViewBag.Query
+
+@foreach (var result in ViewBag.Results as IEnumerable<SearchService.SearchResult>)
+{
+    @result.FileName 
+    @:(
+        @result.Relevance 
+    @:)
+}
